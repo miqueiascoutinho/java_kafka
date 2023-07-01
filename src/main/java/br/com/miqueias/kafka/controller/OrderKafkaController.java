@@ -1,7 +1,7 @@
 package br.com.miqueias.kafka.controller;
 
 import br.com.miqueias.kafka.domain.Order;
-import br.com.miqueias.kafka.mapping.OrderMapping;
+import br.com.miqueias.kafka.mapper.OrderMapper;
 import br.com.miqueias.kafka.representation.OrderRepresentation;
 import br.com.miqueias.kafka.service.OrdersService;
 import lombok.AllArgsConstructor;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class OrderKafkaController {
 
     private final OrdersService ordersService;
-    private final OrderMapping mapper;
+    private final OrderMapper mapper;
 
     @PostMapping
     public ResponseEntity<OrderRepresentation> createOrders(@RequestBody OrderRepresentation input)  {
