@@ -1,0 +1,13 @@
+server:
+  port: 8080
+spring:
+  kafka:
+    bootstrap-serverss: teste
+    client-id: ecommerce-miqueias
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+topic.name.old: orders
+topic.name.new: ecommerce-orders

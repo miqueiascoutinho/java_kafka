@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "Orders",
+  "namespace": "br.com.miqueias.kafka",
+  "fields": [
+    {
+      "name": "id",
+      "type": "long"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    }
+  ]
+}
