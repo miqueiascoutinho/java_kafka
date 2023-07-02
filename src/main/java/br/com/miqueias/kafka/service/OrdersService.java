@@ -21,7 +21,7 @@ public class OrdersService {
         order.setId(novaVenda());
       log.info(".. OrderService init with: {}", order);
 
-        orderProducer.sendMessage(order.getComprador().getEmail(), order);
+        orderProducer.sendMessage(order.getId().toString(), order);
 
         return OrderResume.builder()
                 .codigoVenda(order.getId())

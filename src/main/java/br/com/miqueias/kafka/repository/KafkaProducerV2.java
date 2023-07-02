@@ -27,9 +27,9 @@ public class KafkaProducerV2 {
         log.info(".. Send message to topic {}, witk key: {}, message: {}", topic, key, json);
         CompletableFuture<SendResult<String, String>> send = template.send(topic, null, key, json);
 
-        send.whenComplete((suss, error) -> {
+        send.whenComplete((success, error) -> {
             if (Objects.isNull(error)) {
-                log.info("Finalizado com sucesso ..");
+                log.info(".. Send message to topic {} with success", topic);
             } else {
                 log.error(".. Error to send message to topic {} error {}", topic, error.getMessage());
             }

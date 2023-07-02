@@ -16,8 +16,8 @@ public class OrderConsumer {
     private final Gson gson;
     @KafkaListener(topics = "${topic.name.new}", groupId = "estoque")
     public void processMessage(ConsumerRecord<String, String> record){
-        log.info("Kafka Listener read message from topic {} with key {} and message {}", record.topic(), record.key(), record.value());
-
+        log.info("Kafka Listener read message from topic {}, partition {}, offset {} with key {} and message {}", record.topic(), record.partition(), record.offset(),
+                record.key(), record.value());
         String message = record.value();
         String json = gson.toJson(message);
         Order order = gson.fromJson(message, Order.class);
