@@ -3,7 +3,6 @@ server:
 spring:
   kafka:
     bootstrap-servers: pkc-ymrq7.us-east-2.aws.confluent.cloud:9092
-
     properties:
       sasl:
         mechanism: PLAIN
@@ -16,6 +15,10 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
 #      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      max-poll-records: 2
 
 topic:
   name:
