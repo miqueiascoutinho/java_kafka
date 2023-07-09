@@ -1,4 +1,4 @@
-package br.com.miqueias.kafka.repository;
+package br.com.miqueias.kafka.repository.producer;
 
 import com.google.gson.Gson;
 import lombok.RequiredArgsConstructor;

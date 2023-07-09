@@ -19,8 +19,18 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       max-poll-records: 2
+    streams:
+      replication-factor: 3
+      application-id: stream-estoques
 
 topic:
   name:
     old: orders
     new: ecommerce-orders
+    resume: ecommerce-orders-resume
+    resume-ktable: ecommerce-orders-resume-ktable
+    users: ecommerce-orders-users
+    join: ecommerce-orders-joins
+    aggregate-in: ecommerce-orders-aggregate-in
+    aggregate-out: ecommerce-orders-aggregate-out
+    kafka-streams: ecommerce-orders-kafka-streams-in

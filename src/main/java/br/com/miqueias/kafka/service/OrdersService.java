@@ -2,18 +2,16 @@ package br.com.miqueias.kafka.service;
 
 import br.com.miqueias.kafka.domain.Order;
 import br.com.miqueias.kafka.domain.OrderResume;
-import br.com.miqueias.kafka.repository.KafkaProducerV2;
+import br.com.miqueias.kafka.repository.producer.KafkaProducerV2;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.math.BigDecimal;
 
 @Slf4j
 @Service
 public class OrdersService {
 
-    private Integer idVenda = 1;
+    private Integer idVenda = 1010;
 
     @Autowired
     KafkaProducerV2 orderProducer;
@@ -32,6 +30,7 @@ public class OrdersService {
     }
 
     private Integer novaVenda(){
-        return ++idVenda;
+        if(idVenda >= 1020) idVenda = 1010;
+        return idVenda++;
     }
 }

@@ -1,4 +1,4 @@
-package br.com.miqueias.kafka.repository;
+package br.com.miqueias.kafka.repository.producer;
 
 import br.com.miqueias.kafka.Orders;
 import lombok.extern.slf4j.Slf4j;
