@@ -1,0 +1,40 @@
+{
+	"info": {
+		"_postman_id": "f4158144-6e8c-4dd1-a99a-0f34a5e03b6b",
+		"name": "Kafka",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5647147"
+	},
+	"item": [
+		{
+			"name": "Cadastro Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"produto\": \"{{$randomProduct}}\",\n    \"quantidade\": {{$randomInt}},\n    \"valor\": {{$randomPrice}},\n    \"comprador\": {\n        \"nome\": \"{{$randomFullName}}\",\n        \"email\": \"{{$randomEmail}}\"\n    },\n    \"vendedor\": {\n        \"nome\": \"{{$randomFullName}}\",\n        \"email\": \"{{$randomEmail}}\"\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
