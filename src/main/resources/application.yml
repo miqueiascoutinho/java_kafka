@@ -2,13 +2,13 @@ server:
   port: 8080
 spring:
   kafka:
-    bootstrap-servers: pkc-ymrq7.us-east-2.aws.confluent.cloud:9092
+#    bootstrap-servers: pkc-ymrq7.us-east-2.aws.confluent.cloud:9092
     properties:
       sasl:
-        mechanism: PLAIN
-        jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username='TWLDNAIWYVSTZ4HP' password='CEhJa+SaP2/v5ismJfK1JhtQzFp7Y4vP3D/Qypwd9Cp4J0iLIj0cLvaD/LeljnqZ';
+#        mechanism: PLAIN
+#        jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username='TWLDNAIWYVSTZ4HP' password='CEhJa+SaP2/v5ismJfK1JhtQzFp7Y4vP3D/Qypwd9Cp4J0iLIj0cLvaD/LeljnqZ';
       security:
-        protocol: SASL_SSL
+#        protocol: SASL_SSL
       session.timeout.ms: 45000
     client-id: ecommerce-orders
     producer:
